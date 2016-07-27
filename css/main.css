@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar.navbar-info {
+    background-color: #282828;
+}
+
+.text-blue {
+    color: #05A5F6;
+}
