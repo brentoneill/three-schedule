@@ -15,9 +15,12 @@ body {
 footer {
     position: relative;
     z-index: 1;
-
+    min-height: 100px;
     color: white;
     background-color: #282828;
+}
+.copyright {
+    padding-top: 10px;
 }
 
 .page-wrapper {
@@ -43,7 +46,6 @@ footer {
 
 .navbar.navbar-info {
     z-index: 1;
-
     background-color: #282828;
 }
 
