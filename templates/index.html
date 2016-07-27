@@ -1,8 +1,15 @@
-<!-- Top menu bar -->
-<ng-include src=" 'templates/_top-menu.html' " ></ng-include>
-<!-- Side menu bar -->
-<ng-include src=" 'templates/_side-menu.html' " ></ng-include>
-<!-- App view sits here -->
-<ui-view></ui-view>
-<!-- Footer -->
-<ng-include src=" 'templates/_footer.html' " ></ng-include>
+<div class="page-wrapper">
+    <!-- Top menu bar -->
+    <ng-include src=" 'templates/_top-menu.html' " ></ng-include>
+    <!-- Side menu bar -->
+    <ng-include src=" 'templates/_side-menu.html' " ></ng-include>
+    <!-- App view sits here -->
+    <div class="app-container">
+        <ui-view></ui-view>
+    </div>
+</div>
+
+<div class="footer-wrapper">
+    <!-- Footer -->
+    <ng-include src=" 'templates/_footer.html' " ></ng-include>
+</div>

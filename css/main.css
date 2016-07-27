@@ -1,6 +1,39 @@
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: white;
     color: black;
+    background-color: white;
+
+    font-family: "Open Sans", -apple-system, "Roboto", "Helvetica Neue", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+
+    color: white;
+    background-color: #282828;
+}
+
+.page-wrapper {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -80px;
+}
+
+.page-wrapper:after {
+  display: block;
+
+  content: "";
+}
+
+.footer-wrapper, .page-wrapper:after {
+  height: 80px;
 }
 
 .navbar {
@@ -8,9 +41,84 @@ body {
 }
 
 .navbar.navbar-info {
+    z-index: 1;
+
     background-color: #282828;
+}
+
+.form-group .form-control,
+.form-control {
+    background-image: linear-gradient(#05A5F6, #05A5F6), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.navbar.navbar-info .form-group {
+    margin-top: 7px;
 }
 
 .text-blue {
     color: #05A5F6;
+}
+
+footer .col-xs-6 img {
+    vertical-align: baseline;
+}
+
+.img-logo {
+    max-height: 40px;
+}
+
+.side-menu {
+    position: fixed;
+    z-index:0;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 100%;
+
+    color: white;
+    /*background-color: #282828;*/
+    border: thin solid black;
+}
+
+.app-container {
+    min-height: 700px;
+    margin-left: 50px;
+}
+
+.navbar-right li a {
+    position: relative;
+}
+
+.badge-notification {
+    position: absolute;
+    top: 8px;
+    left: 56%;
+
+    min-width: 8px;
+    padding-right: 4px;
+    padding-left: 4px;
+
+    text-align: center;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 0;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.badge-notification-red {
+    background-color: #ed1c40;
+}
+
+.badge-notification-blue {
+    background-color: #05A5F6;
+}
+
+.avatar-wrapper {
+    margin-left: 12px;
 }
