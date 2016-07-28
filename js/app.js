@@ -13,17 +13,17 @@ angular.module('threeWireDemo', [
             .state('app', {
                 abstract: true,
                 url: '',
-                templateUrl: 'templates/index.html',
+                templateUrl: 'views/index.html',
                 controller: 'AppCtrl'
             })
             .state('app.search', {
                 url: '/search',
-                templateUrl: 'templates/search.html',
+                templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             })
             .state('app.results', {
                 url: '/results',
-                templateUrl: 'templates/results.html',
+                templateUrl: 'views/results.html',
                 controller: 'ResultsCtrl'
             });
 
