@@ -1,1 +1,29 @@
-<h2>results</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <h1 class="h2 fw-bold text-uppercase">Provider Availabilty</h1>
+        </div>
+        <div class="col-xs-6 text-right">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#" ui-sref="app.search">Provider Search</a>
+                </li>
+                <li class="active">
+                    Provider Availability
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="row clear-fix">
+        <div class="col-xs-12">
+            <div class="panel panel-transparent">
+                <div class="panel-body">
+                    <div ui-calendar="calendarConfig" calendar="providerAvailability" ng-model="eventSources"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

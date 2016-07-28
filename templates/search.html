@@ -1,1 +1,190 @@
-<h2>search</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <h1 class="h2 fw-bold text-uppercase">Provider Search</h1>
+        </div>
+        <div class="col-xs-6 text-right">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    Provider Search
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="row clear-fix">
+        <div class="col-xs-12">
+            <div class="panel panel-transparent">
+                <!-- <div class="panel-heading">
+                    <h5 class="text-uppercase">Provider Search</h5>
+                </div> -->
+                <div class="panel-body">
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Veteran Address</label>
+                            <div class="form-group form-group-no-float is-empty">
+                                <input ng-model="data.address"
+                                       uib-typeahead="address for address in getLocation($viewValue)"
+                                       type="text" placeholder="123 Main St, Long Beach, CA 90808" class="form-control">
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Distance (In Miles)</label>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.distance" name="distance" type="radio" value="5">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            5
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.distance" name="distance" type="radio" value="10">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            10
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.distance" name="distance" type="radio" value="15">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            15
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.distance" name="distance" type="radio" value="20">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            20
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Gender Preference</label>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.gender" name="gender" type="radio" value="female">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.gender" name="gender" type="radio" value="male">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            Male
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Handicap Accessible</label>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.handicap" name="handicap" type="radio" value="no">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.handicap" name="handicap" type="radio" value="yes">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            Yes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Time of Day</label>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.timeOfDay" name="time_of_day" type="radio" value="morning">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            Morning
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-model="data.timeOfDay" name="time_of_day" type="radio" value="afternoon">
+                                            <span class="circle"></span>
+                                            <span class="check"></span>
+                                            Afternoon
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-form">
+                        <div class="col-xs-12">
+                            <label class="mbn fw-bold">Preferred provider</label>
+                            <div class="form-group form-group-no-float is-empty">
+                                <input ng-model="data.preferredProvider"
+                                       uib-typeahead="provider for provider in providers | filter:$viewValue | limitTo:8"
+                                       type="text"
+                                       placeholder="Start typing the name of the provider..."
+                                       class="form-control">
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                            <button class="btn btn-lg btn-primary btn-block btn-round" ng-click="search()">
+								<i class="fa fa-fw fa-2x fa-search"></i>&nbsp;Search
+							    <div class="ripple-container"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

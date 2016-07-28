@@ -1,0 +1,234 @@
+$border-radius-panel: 5px;
+$bg-transparent: rgba(255, 255, 255, 0.05);
+$bg-transparent-hover: rgba(255, 255, 255, 0.1);
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    color: white;
+    background-color: white;
+
+    font-family: "Open Sans", -apple-system, "Roboto", "Helvetica Neue", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer {
+    z-index: 1;
+
+    width: 100%;
+    min-height: 100px;
+
+    color: white;
+    background-color: #282828;
+    box-shadow: 0 -10px 20px -12px rgba(0, 0, 0, 0.42), 0 -3px 20px 0px rgba(0, 0, 0, 0.12), 0 -8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+    padding-top: 10px;
+}
+
+.navbar {
+    margin-bottom: 0;
+
+    border-radius: 0;
+}
+
+.navbar.navbar-info {
+    z-index: 1;
+
+    background-color: #282828;
+}
+
+.navbar.navbar-info .form-group {
+    margin-top: 7px;
+}
+
+.text-blue {
+    color: #05A5F6;
+}
+
+footer .col-xs-6 img {
+    vertical-align: baseline;
+}
+
+.img-logo {
+    max-height: 40px;
+}
+
+.side-menu {
+    position: fixed;
+    z-index:1;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 100%;
+
+    color: white;
+    background-color: #282828;
+}
+
+.app-container {
+    position: relative;
+    z-index: 0;
+    min-height: 1000px;
+    padding: 50px;
+    color: white;
+    background: #092756;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
+}
+
+.navbar-right li a {
+    position: relative;
+}
+
+.badge-notification {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+
+    min-width: 8px;
+    padding-right: 4px;
+    padding-left: 4px;
+
+    text-align: center;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 0;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.badge-notification-red {
+    background-color: $brand-danger;
+}
+
+.badge-notification-blue {
+    background-color: $brand-primary;
+}
+
+.avatar-wrapper {
+    margin-left: 12px;
+}
+
+.navbar-left {
+    margin-left: 30px;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.breadcrumb {
+    margin-top: 40px;
+    background: transparent;
+    li.active {
+        color: #fff;
+    }
+}
+
+.panel-transparent {
+    border-radius: $border-radius-panel;
+    background-color: $bg-transparent;
+    .panel-heading {
+        background-color: $bg-transparent;
+        border-bottom: thin solid rgba(255, 255, 255, 0.2);
+        border-top-right-radius: $border-radius-panel;
+        border-top-left-radius: $border-radius-panel;
+        h5 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+    .panel-body {
+        background-color: $bg-transparent;
+    }
+}
+
+.radio {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .check,
+    .circle {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    label {
+        border-radius: $border-radius-panel;
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        transition: all .15s ease-out;
+        &:hover {
+            background-color: $bg-transparent-hover;
+        }
+    }
+}
+
+.radio label .circle {
+    border-color: #fff;
+}
+
+.checkbox label, .radio label, label {
+    color: #fff;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.mbn {
+    margin-bottom: 0 !important;
+}
+
+.row-form{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    .form-group-no-float {
+        margin-top: 0;
+    }
+}
+
+
+.form-control {
+    color: #fff;
+}
+
+.btn.btn-lg {
+    font-size: $font-size-large;
+    margin-bottom: 15px;
+}
+
+.hover-transparent {
+    transition: all .15s ease-out;
+    &:hover {
+            opacity: 0.8;
+        img {
+            opacity: 0.8;
+        }
+    }
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: $brand-primary;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+}

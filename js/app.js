@@ -2,13 +2,12 @@
 
 angular.module('threeWireDemo', [
         'ui.router',
+        'ui.bootstrap',
+        'ui.calendar',
         'ngRoute',
         'ngAnimate',
         'ngMaterial'
     ])
-    .run(function(){
-
-    })
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('app', {
