@@ -2,14 +2,13 @@
 
 angular.module('threeWireDemo', [
         'ui.router',
+        'ui.bootstrap',
+        'ui.calendar',
         'ngRoute',
         'ngAnimate',
         'ngMaterial'
     ])
-    .run(function(){
-
-    })
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
             .state('app', {
                 abstract: true,
@@ -27,6 +26,8 @@ angular.module('threeWireDemo', [
                 templateUrl: 'templates/results.html',
                 controller: 'ResultsCtrl'
             });
-
+            
+        $locationProvider
+            .html5Mode(false);
         $urlRouterProvider.otherwise('/search');
     });
