@@ -26,8 +26,8 @@ angular.module('threeWireDemo', [
                 templateUrl: 'templates/results.html',
                 controller: 'ResultsCtrl'
             });
-            
+
         $locationProvider
-            .html5Mode(false);
+            .html5Mode(true);
         $urlRouterProvider.otherwise('/search');
     });
