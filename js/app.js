@@ -6,7 +6,8 @@ angular.module('threeWireDemo', [
         'ui.calendar',
         'ngRoute',
         'ngAnimate',
-        'ngMaterial'
+        'ngMaterial',
+        'angular-loading-bar'
     ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
@@ -27,7 +28,7 @@ angular.module('threeWireDemo', [
                 controller: 'ResultsCtrl'
             });
 
-        $locationProvider
-            .html5Mode(true);
+        // $locationProvider
+        //     .html5Mode(true);
         $urlRouterProvider.otherwise('/search');
     });

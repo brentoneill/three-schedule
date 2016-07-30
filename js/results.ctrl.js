@@ -5,6 +5,12 @@ angular.module('threeWireDemo')
         $scope.searchParams = $stateParams.searchParams;
         $scope.eventSources = [];
         $scope.calendarConfig = {
-            defaultView: 'agendaWeek'
+            header: false,
+            defaultView: 'agendaDay',
+            views: {
+                agenda: {
+
+                }
+            }
         };
     });

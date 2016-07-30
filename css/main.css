@@ -2855,7 +2855,7 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 footer {
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   min-height: 100px;
   color: white;
@@ -2887,7 +2887,7 @@ footer .col-xs-6 img {
 
 .side-menu {
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   top: 0;
   left: 0;
   width: 50px;
@@ -3031,7 +3031,7 @@ footer .col-xs-6 img {
   min-width: 200px; }
 
 .top-menu {
-  z-index: 2; }
+  z-index: 1; }
 
 /*!
  * angular-loading-bar v0.9.0
@@ -3146,4 +3146,4 @@ footer .col-xs-6 img {
   100% {
     transform: rotate(360deg); } }
 
-/*# sourceMappingURL=material-kit.css.map */
+/*# sourceMappingURL=main.css.map */
