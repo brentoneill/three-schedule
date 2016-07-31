@@ -6,7 +6,8 @@ angular.module('threeWireDemo', [
         'ui.calendar',
         'ngRoute',
         'ngAnimate',
-        'ngMaterial'
+        'ngMaterial',
+        'angular-loading-bar'
     ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
@@ -21,13 +22,23 @@ angular.module('threeWireDemo', [
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             })
+            .state('app.availability', {
+                url: '/availability',
+                templateUrl: 'views/availability.html',
+                controller: 'AvailabilityCtrl'
+            })
             .state('app.results', {
                 url: '/results',
                 templateUrl: 'views/results.html',
-                controller: 'ResultsCtrl'
+                controller: 'ResultsCtrl',
+                resolve: {
+                    apiResponse: function($http) {
+                        return $http.get('https://api.freebusy.io/beta/week/jcavanaugh@threewiresys.com?tz=America/New_York&date=2016-06-12');
+                    }
+                }
             });
 
-        $locationProvider
-            .html5Mode(true);
+        // $locationProvider
+        //     .html5Mode(true);
         $urlRouterProvider.otherwise('/search');
     });

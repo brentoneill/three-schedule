@@ -24,7 +24,10 @@
     "angular-material": "^1.0.9",
     "angular-route": "^1.5.8",
     "angular-bootstrap": "^2.0.0",
-    "angular-ui-calendar": "^1.0.2"
+    "angular-ui-calendar": "^1.0.2",
+    "angular-loading-bar": "^0.9.0",
+    "fullcalendar-scheduler": "^1.3.2",
+    "lodash": "^4.14.1"
   },
   "resolutions": {
     "angular": "1.5.8"

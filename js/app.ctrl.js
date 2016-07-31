@@ -1,6 +1,10 @@
 'use strict';
 
 angular.module('threeWireDemo')
-    .controller('AppCtrl', function($scope) {
-        console.log('app ctrl loaded');
+    .controller('AppCtrl', function($scope, $state) {
+
+        $scope.onHeaderSearch = function () {
+            $state.go('app.results');
+        };
+
     });
