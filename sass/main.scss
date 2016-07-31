@@ -3,7 +3,6 @@ $bg-transparent: rgba(255, 255, 255, 0.05);
 $bg-transparent-hover: rgba(255, 255, 255, 0.1);
 $black-grey: #282828;
 
-
 html, body {
     height: 100%;
     background-color: $black-grey;
@@ -28,36 +27,36 @@ footer {
     color: white;
     background-color: $black-grey;
     box-shadow: 0 -10px 20px -12px rgba(0, 0, 0, 0.42), 0 -3px 20px 0px rgba(0, 0, 0, 0.12), 0 -8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
-.copyright {
-    padding-top: 10px;
-}
-
-.navbar {
-    margin-bottom: 0;
-
-    border-radius: 0;
+    .col-xs-6 img {
+        vertical-align: baseline;
+    }
+    .copyright {
+        padding-top: 10px;
+    }
+    .img-logo {
+        max-height: 40px;
+    }
 }
 
 .navbar.navbar-info {
-    background-color: #282828;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: $black-grey;
+    .form-group {
+        margin-top: 7px;
+    }
 }
-
-.navbar.navbar-info .form-group {
-    margin-top: 7px;
-}q
 
 .text-blue {
-    color: #05A5F6;
+    color: $brand-primary;
 }
 
-footer .col-xs-6 img {
-    vertical-align: baseline;
+.dropdown-menu {
+    min-width: 200px;
 }
 
-.img-logo {
-    max-height: 40px;
+.top-menu {
+    z-index: 2;
 }
 
 .side-menu {
@@ -79,8 +78,11 @@ footer .col-xs-6 img {
         padding: 20px;
         cursor: pointer;
         text-align: center;
-        i {
-            opacity: .7;
+        a {
+            display: block;
+            height: 100%;
+            color: white;
+            opacity: .5;
             transition: all .3s ease-out;
             &:hover {
                 opacity: 1;
@@ -244,10 +246,8 @@ footer .col-xs-6 img {
     background-color: $brand-primary;
 }
 
-.dropdown-menu {
-    min-width: 200px;
-}
 
-.top-menu {
-    z-index: 2;
+
+.fc-license-message {
+    display: none;
 }

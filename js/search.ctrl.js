@@ -23,6 +23,7 @@ angular.module('threeWireDemo')
                     sensor: false
                 }
             }).then(function(response) {
+                console.log(response);
                 return response.data.results.map(function(item) {
                     return item.formatted_address;
                 });
@@ -33,7 +34,7 @@ angular.module('threeWireDemo')
             $http.get('https://api.freebusy.io/beta/week/jcavanaugh@threewiresys.com?tz=America/New_York&date=2016-06-12')
                 .then(function(response) {
                     console.log(response);
-                    $state.go('app.results', {
+                    $state.go('app.availability', {
                         data: $scope.data
                     });
                 });

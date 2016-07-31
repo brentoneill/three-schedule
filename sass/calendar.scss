@@ -1,0 +1,11 @@
+.fc-view {
+    background-color: #fff;
+    color: $black-grey;
+
+    // Provider headers
+    [data-resource-id] {
+        padding-top: $padding-small-vertical;
+        padding-bottom: $padding-small-vertical;
+        font-size: $font-size-large;
+    }
+}
