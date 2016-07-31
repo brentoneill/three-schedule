@@ -10,7 +10,6 @@ html, body {
 
 body {
     color: white;
-    background-color: white;
 
     font-family: "Open Sans", -apple-system, "Roboto", "Helvetica Neue", sans-serif;
 
@@ -75,12 +74,12 @@ footer {
 
     li {
         display: block;
-        padding: 20px;
-        cursor: pointer;
         text-align: center;
         a {
+            padding: 15px;
             display: block;
             height: 100%;
+            width: 100%;
             color: white;
             opacity: .5;
             transition: all .3s ease-out;

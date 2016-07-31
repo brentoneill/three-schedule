@@ -2849,7 +2849,6 @@ html, body {
 
 body {
   color: white;
-  background-color: white;
   font-family: "Open Sans", -apple-system, "Roboto", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -2896,12 +2895,12 @@ footer {
   background-color: #282828; }
   .side-menu li {
     display: block;
-    padding: 20px;
-    cursor: pointer;
     text-align: center; }
     .side-menu li a {
+      padding: 15px;
       display: block;
       height: 100%;
+      width: 100%;
       color: white;
       opacity: .5;
       transition: all .3s ease-out; }
