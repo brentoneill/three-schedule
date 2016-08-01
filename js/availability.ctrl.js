@@ -1,30 +1,25 @@
 'use strict';
 
 angular.module('threeWireDemo')
-    .controller('AvailabilityCtrl', function($scope) {
+    .controller('AvailabilityCtrl', function($scope, $uibModal) {
 
         var today = moment();
 
-        var providers = [
-            {
-                id: 'a',
-                title: 'Provider Jill'
-            },
-            {
-                id: 'b',
-                title: 'Provider John'
-            },
-            {
-                id: 'c',
-                title: 'Provider Bill'
-            },
-            {
-                id: 'd',
-                title: 'Provider Mary'
-            }
-        ];
+        var providers = [{
+            id: 'a',
+            title: 'Provider Jill'
+        }, {
+            id: 'b',
+            title: 'Provider John'
+        }, {
+            id: 'c',
+            title: 'Provider Bill'
+        }, {
+            id: 'd',
+            title: 'Provider Mary'
+        }];
 
-        function generateTimeSlots (providers) {
+        function generateTimeSlots(providers) {
             var timeSlots = []
             var count = 0;
             _.each(providers, function(provider, idx, arr) {
@@ -66,5 +61,17 @@ angular.module('threeWireDemo')
             // viewRender: function() {
             //     $scope.timeSlots = generateTimeSlots(providers);
             // }
-        };
+			dayClick: function(date, jsEvent, view) {
+				console.log(date);
+				console.log(view);
+				openSchedulingModal(date)
+		    }
+		};
+
+		function openSchedulingModal(date) {
+			$uibModal.open({
+				templateUrl: 'views/partials/_modal-scheduling-1.html'
+			});
+		}
+
     });

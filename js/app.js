@@ -7,6 +7,7 @@ angular.module('threeWireDemo', [
         'ngRoute',
         'ngAnimate',
         'ngMaterial',
+		'ngPrettyJson',
         'angular-loading-bar'
     ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
