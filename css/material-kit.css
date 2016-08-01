@@ -3031,6 +3031,13 @@ footer {
 .fc-license-message {
   display: none; }
 
+.modal {
+  display: block;
+  color: #282828; }
+  .modal label,
+  .modal .form-control {
+    color: #282828; }
+
 /*!
  * angular-loading-bar v0.9.0
  * https://chieffancypants.github.io/angular-loading-bar

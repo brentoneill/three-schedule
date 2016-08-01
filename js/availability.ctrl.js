@@ -3,6 +3,9 @@
 angular.module('threeWireDemo')
     .controller('AvailabilityCtrl', function($scope, $uibModal) {
 
+		$scope.data = {};
+		$scope.data.veteran = {};
+
         var today = moment();
 
         var providers = [{
@@ -62,14 +65,32 @@ angular.module('threeWireDemo')
             //     $scope.timeSlots = generateTimeSlots(providers);
             // }
 			dayClick: function(date, jsEvent, view) {
-				console.log(date);
-				console.log(view);
 				openSchedulingModal(date)
+				$scope.data.date = date.toJSON();
 		    }
 		};
 
+		$scope.closeModal = function (modalId) {
+			$scope[modalId].close();
+		};
+
+		$scope.confirmAppointment = function() {
+			$scope.modal1.close();
+			openConfirmationModal();
+		};
+
+		function openConfirmationModal(){
+			$scope.modal2 = $uibModal.open({
+				windowClass: 'show',
+				scope: $scope,
+				templateUrl: 'views/partials/_modal-scheduling-2.html'
+			})
+		}
+
 		function openSchedulingModal(date) {
-			$uibModal.open({
+			$scope.modal1 = $uibModal.open({
+				windowClass: 'show',
+				scope: $scope,
 				templateUrl: 'views/partials/_modal-scheduling-1.html'
 			});
 		}

@@ -1,22 +1,39 @@
-<div class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
+<div class="modal-header">
+    <h3 class="modal-title">Schedule Appointment</h3>
 </div>
-<!-- /.modal -->
+<div class="modal-body">
+	<h5>Appointment is for: </h5>
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<label class="mbn fw-bold">Veteran's Name</label>
+			<div class="form-group form-group-no-float is-empty">
+				<div class="row">
+					<div class="col-sm-6">
+						<input ng-model="data.veteran.firstName"
+							   name="firstName"
+							   id="firstName"
+							   type="text" placeholder="First name" class="form-control">
+						<span class="material-input"></span>
+					</div>
+					<div class="col-sm-6">
+						<input ng-model="data.veteran.lastName"
+							   name="lastName"
+							   id="lastName"
+							   type="text" placeholder="Last name" class="form-control">
+						<span class="material-input"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row row-form">
+		<div class="col-xs-12">
+			<h5>Appointment is on: </h5>
+			{{ data.date | date:'fullDate' }} at  {{ data.date | date:'shortTime' }}
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-simple" ng-click="closeModal('modal1')">Close</button>
+    <button ng-disabled="!data.veteran.firstName || !data.veteran.lastName" type="button" class="btn btn-primary" ng-click="confirmAppointment()">Confirm Appointment</button>
+</div>
