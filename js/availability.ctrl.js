@@ -1,30 +1,28 @@
 'use strict';
 
 angular.module('threeWireDemo')
-    .controller('AvailabilityCtrl', function($scope) {
+    .controller('AvailabilityCtrl', function($scope, $uibModal) {
+
+		$scope.data = {};
+		$scope.data.veteran = {};
 
         var today = moment();
 
-        var providers = [
-            {
-                id: 'a',
-                title: 'Provider Jill'
-            },
-            {
-                id: 'b',
-                title: 'Provider John'
-            },
-            {
-                id: 'c',
-                title: 'Provider Bill'
-            },
-            {
-                id: 'd',
-                title: 'Provider Mary'
-            }
-        ];
+        var providers = [{
+            id: 'a',
+            title: 'Provider Jill'
+        }, {
+            id: 'b',
+            title: 'Provider John'
+        }, {
+            id: 'c',
+            title: 'Provider Bill'
+        }, {
+            id: 'd',
+            title: 'Provider Mary'
+        }];
 
-        function generateTimeSlots (providers) {
+        function generateTimeSlots(providers) {
             var timeSlots = []
             var count = 0;
             _.each(providers, function(provider, idx, arr) {
@@ -66,5 +64,35 @@ angular.module('threeWireDemo')
             // viewRender: function() {
             //     $scope.timeSlots = generateTimeSlots(providers);
             // }
-        };
+			dayClick: function(date, jsEvent, view) {
+				openSchedulingModal(date)
+				$scope.data.date = date.toJSON();
+		    }
+		};
+
+		$scope.closeModal = function (modalId) {
+			$scope[modalId].close();
+		};
+
+		$scope.confirmAppointment = function() {
+			$scope.modal1.close();
+			openConfirmationModal();
+		};
+
+		function openConfirmationModal(){
+			$scope.modal2 = $uibModal.open({
+				windowClass: 'show',
+				scope: $scope,
+				templateUrl: 'views/partials/_modal-scheduling-2.html'
+			})
+		}
+
+		function openSchedulingModal(date) {
+			$scope.modal1 = $uibModal.open({
+				windowClass: 'show',
+				scope: $scope,
+				templateUrl: 'views/partials/_modal-scheduling-1.html'
+			});
+		}
+
     });

@@ -250,3 +250,12 @@ footer {
 .fc-license-message {
     display: none;
 }
+
+.modal {
+    display: block;
+	color: $black-grey;
+	label,
+	.form-control {
+		color: $black-grey;
+	}
+}

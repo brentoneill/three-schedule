@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4 class="modal-title">Appointment Confirmed!</h4>
+</div>
+<div class="modal-body">
+    <p>
+    	Your appointment for <b>{{ data.veteran.firstName }} {{ data.veteran.lastName }}</b> on <b>{{ data.date | date:'fullDate' }}</b> at <b>{{ data.date | date:'shortTime' }}</b> has been confirmed.
+    </p>
+	<p>
+		Thank you for using TWS Appointing!
+	<p>
+</div>
+<div class="modal-footer">
+	<div class="row row-form">
+		<div class="col-xs-12 text-center">
+			<button type="button" class="btn btn-primary" ng-click="closeModal('modal2')">Close Popup</button>
+		</div>
+	</div>
+</div>

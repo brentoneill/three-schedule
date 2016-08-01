@@ -1125,7 +1125,7 @@ output {
     padding-top: 8px; } }
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 13.0px;
+    padding-top: 13px;
     font-size: 18px; } }
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
@@ -1419,7 +1419,7 @@ label.control-label {
     font-weight: 400; }
   .form-group.form-group-lg label.control-label {
     font-size: 14px;
-    line-height: 1.0;
+    line-height: 1;
     color: #AAAAAA;
     font-weight: 400;
     margin: 16px 0 0 0; }
@@ -1434,12 +1434,12 @@ label.control-label {
     top: -32px;
     left: 0;
     font-size: 14px;
-    line-height: 1.0; }
+    line-height: 1; }
   .form-group.form-group-lg.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
     top: -32px;
     left: 0;
     font-size: 14px;
-    line-height: 1.0; }
+    line-height: 1; }
 
 select.form-control {
   border: 0;
@@ -3031,6 +3031,13 @@ footer {
 .fc-license-message {
   display: none; }
 
+.modal {
+  display: block;
+  color: #282828; }
+  .modal label,
+  .modal .form-control {
+    color: #282828; }
+
 /*!
  * angular-loading-bar v0.9.0
  * https://chieffancypants.github.io/angular-loading-bar
@@ -3150,5 +3157,8 @@ footer {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 18px; }
+
+.fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title {
+  font-size: 16px; }
 
 /*# sourceMappingURL=material-kit.css.map */
