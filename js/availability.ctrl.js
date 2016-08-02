@@ -65,6 +65,9 @@ angular.module('threeWireDemo')
             // viewRender: function() {
             //     $scope.timeSlots = generateTimeSlots(providers);
             // }
+			eventMouseHover: function(event, jsEvent, view) {
+				console.log(event);
+			},
 			dayClick: function(date, jsEvent, view) {
 				openSchedulingModal(date)
 				$scope.data.date = date.toJSON();

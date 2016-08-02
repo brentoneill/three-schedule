@@ -1,15 +1,24 @@
 .fc-view {
-    background-color: #fff;
     color: $black-grey;
+    background-color: #fff;
 
     // Provider headers
     [data-resource-id] {
         padding-top: $padding-small-vertical;
         padding-bottom: $padding-small-vertical;
+
         font-size: $font-size-large;
     }
 }
 
 .fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title {
 	font-size: 16px;
+}
+
+.modal-backdrop.in {
+	opacity: 1;
+}
+
+.modal-backdrop {
+	background: rgba(0,0,0,0.5);
 }

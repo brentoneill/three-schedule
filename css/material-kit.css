@@ -3151,8 +3151,8 @@ footer {
   100% {
     transform: rotate(360deg); } }
 .fc-view {
-  background-color: #fff;
-  color: #282828; }
+  color: #282828;
+  background-color: #fff; }
   .fc-view [data-resource-id] {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -3160,5 +3160,11 @@ footer {
 
 .fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title {
   font-size: 16px; }
+
+.modal-backdrop.in {
+  opacity: 1; }
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=material-kit.css.map */
