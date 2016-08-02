@@ -60,6 +60,7 @@ angular.module('threeWireDemo')
             eventTextColor: '#fff',
             resources: providers,
             defaultView: 'agendaDay',
+			timezone: 'local',
             events: generateTimeSlots(providers),
             // viewRender: function() {
             //     $scope.timeSlots = generateTimeSlots(providers);
