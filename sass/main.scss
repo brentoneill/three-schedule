@@ -246,7 +246,6 @@ footer {
 }
 
 
-
 .fc-license-message {
     display: none;
 }
@@ -258,4 +257,11 @@ footer {
 	.form-control {
 		color: $black-grey;
 	}
+}
+
+pre {
+    border: 0;
+    &.pretty-json {
+        outline: 0;
+    }
 }
