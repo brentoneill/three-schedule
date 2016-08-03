@@ -2,11 +2,8 @@
 
 angular.module('threeWireDemo')
     .controller('AvailabilityCtrl', function($scope, $uibModal) {
-
-		$scope.data = {};
-		$scope.data.veteran = {};
-
-        var today = moment();
+        
+        $scope.today = moment();
 
         var providers = [{
             id: 'a',
@@ -22,16 +19,31 @@ angular.module('threeWireDemo')
             title: 'Provider Mary'
         }];
 
-        function generateTimeSlots(providers) {
+        function generateTimeSlots(providers, offset) {
             var timeSlots = []
             var count = 0;
             _.each(providers, function(provider, idx, arr) {
                 count++;
-                var startTime = Math.floor(Math.random() * 2) + 8;
-                var endTime = Math.floor(Math.random() * 4) + 12;
+                var startTime;
+                var endTime;
+                var date;
+
+                if ( idx % 2 === 0 ) {
+                    startTime = Math.floor(Math.random() * 2) + 8;
+                    endTime = Math.floor(Math.random() * 3) + 10;
+                } else {
+                    startTime = Math.floor(Math.random() * 2) + 12;
+                    endTime = Math.floor(Math.random() * 2) + 15
+                }
+
                 var offsetMinutesStart = Math.random() > .5 ? 30 : 0;
                 var offsetMinutesEnd = Math.random() > .5 ? 30 : 0;
-                var date = today.clone();
+                if ( offset ) {
+                    date = $scope.today.clone().add('days', offset);
+                } else {
+                    date = $scope.today.clone();
+                }
+
                 var newSlot = {
                     id: count,
                     resourceId: provider.id,
@@ -44,7 +56,7 @@ angular.module('threeWireDemo')
             return timeSlots;
         }
 
-        // $scope.timeSlots = generateTimeSlots(providers);
+        $scope.timeSlots = generateTimeSlots(providers);
 
         $scope.calendarConfig = {
             header: {
@@ -61,16 +73,16 @@ angular.module('threeWireDemo')
             resources: providers,
             defaultView: 'agendaDay',
 			timezone: 'local',
-            events: generateTimeSlots(providers),
-            // viewRender: function() {
-            //     $scope.timeSlots = generateTimeSlots(providers);
-            // }
+            events: $scope.timeSlots,
+            // viewRender: function(event, element) {
+            //     $scope.timeSlots = generateTimeSlots(providers, 1);
+            //     console.log($scope.timeSlots);
+            // },
 			eventMouseHover: function(event, jsEvent, view) {
 				console.log(event);
 			},
-			dayClick: function(date, jsEvent, view) {
-				openSchedulingModal(date)
-				$scope.data.date = date.toJSON();
+			dayClick: function(date, jsEvent, view, resourceObj) {
+				openSchedulingModal(date, resourceObj)
 		    }
 		};
 
@@ -83,15 +95,37 @@ angular.module('threeWireDemo')
 			openConfirmationModal();
 		};
 
+        $scope.scheduleAppointment = function(appointment) {
+            $scope.timeSlots.push({
+                id: $scope.timeSlots.length + 1,
+                resourceId: appointment.provider.id,
+                title: 'Appointment with ' + appointment.veteran.firstName + ' ' + appointment.veteran.lastName,
+                start: appointment.startDate,
+                end: appointment.endDate
+            });
+        };
+
 		function openConfirmationModal(){
 			$scope.modal2 = $uibModal.open({
 				windowClass: 'show',
 				scope: $scope,
 				templateUrl: 'views/partials/_modal-scheduling-2.html'
-			})
+			});
 		}
 
-		function openSchedulingModal(date) {
+		function openSchedulingModal(date, provider) {
+            // map all the appointment info
+            $scope.appointment = {
+                provider: {
+                    name: provider.title,
+                    id: provider.id
+                },
+                veteran: {},
+                date: date,
+                startDate: date.clone().toJSON(),
+                endDate: date.clone().add('hours', 1).toJSON()
+            };
+            // open the modal
 			$scope.modal1 = $uibModal.open({
 				windowClass: 'show',
 				scope: $scope,

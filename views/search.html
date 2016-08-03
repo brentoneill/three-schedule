@@ -27,7 +27,7 @@
                             <div class="form-group form-group-no-float is-empty">
                                 <input ng-model="data.address"
                                        uib-typeahead="address for address in getLocation($viewValue)"
-                                       type="text" placeholder="123 Main St, Long Beach, CA 90808" class="form-control">
+                                       type="text" placeholder="Start typing your address" class="form-control">
                                 <span class="material-input"></span>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                                 <input ng-model="data.preferredProvider"
                                        uib-typeahead="provider for provider in providers | filter:$viewValue | limitTo:8"
                                        type="text"
-                                       placeholder="Start typing the name of the provider..."
+                                       placeholder="Start typing the name of the provider"
                                        class="form-control">
                                 <span class="material-input"></span>
                             </div>

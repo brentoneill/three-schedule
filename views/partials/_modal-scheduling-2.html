@@ -1,18 +1,21 @@
 <div class="modal-header">
-    <h4 class="modal-title">Appointment Confirmed!</h4>
+    <h4 class="modal-title">Provider Appointment Confirmed!</h4>
 </div>
 <div class="modal-body">
     <p>
-    	Your appointment for <b>{{ data.veteran.firstName }} {{ data.veteran.lastName }}</b> on <b>{{ data.date | date:'fullDate' }}</b> at <b>{{ data.date | date:'shortTime' }}</b> has been confirmed.
+    	Appointment for <b>{{ appointment.veteran.firstName }} {{ appointment.veteran.lastName }}</b> on <b>{{ appointment.startDate | date:'fullDate' }}</b> at <b>{{ appointment.startDate | date:'shortTime' }}</b> with <b>{{ appointment.provider.name }}</b> has been confirmed.
     </p>
-	<p>
-		Thank you for using TWS Appointing!
+    <p>
+        A text notifcation has been sent to {{ appointment.veteran.firstName }} {{ appointment.veteran.lastName}}
+    </p>
+	<p class="text-center">
+		Thank you for using TriWest Appointing!
 	<p>
 </div>
 <div class="modal-footer">
 	<div class="row row-form">
-		<div class="col-xs-12 text-center">
-			<button type="button" class="btn btn-primary" ng-click="closeModal('modal2')">Close Popup</button>
+		<div class="col-xs-12 text-right">
+			<button type="button" class="btn btn-primary" ng-click="closeModal('modal2');scheduleAppointment(appointment)">Close Popup</button>
 		</div>
 	</div>
 </div>
