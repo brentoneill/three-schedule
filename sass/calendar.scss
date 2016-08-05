@@ -22,3 +22,21 @@
 .modal-backdrop {
 	background: rgba(0,0,0,0.5);
 }
+
+.btn-default {
+    background-color: white;
+    color: $gray;
+}
+
+.uib-datepicker-popup {
+    padding: 10px;
+    color: $text-color;
+    .btn-default {
+        color: $text-color;
+        background-color: white;
+        border-color: $text-color;
+        &:hover {
+            background-color: lighten($gray, 50%);
+        }
+    }
+}

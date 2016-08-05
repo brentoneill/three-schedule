@@ -24,7 +24,7 @@ angular.module('threeWireDemo', [
                 controller: 'SearchCtrl'
             })
             .state('app.availability', {
-                url: '/availability',
+                url: '/availability/:date',
                 templateUrl: 'views/availability.html',
                 controller: 'AvailabilityCtrl'
             })

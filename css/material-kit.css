@@ -3172,4 +3172,18 @@ pre {
 .modal-backdrop {
   background: rgba(0, 0, 0, 0.5); }
 
+.btn-default {
+  background-color: white;
+  color: #555555; }
+
+.uib-datepicker-popup {
+  padding: 10px;
+  color: #333333; }
+  .uib-datepicker-popup .btn-default {
+    color: #333333;
+    background-color: white;
+    border-color: #333333; }
+    .uib-datepicker-popup .btn-default:hover {
+      background-color: #d5d5d5; }
+
 /*# sourceMappingURL=material-kit.css.map */

@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('threeWireDemo')
-    .controller('AvailabilityCtrl', function($scope, $uibModal) {
-        
-        $scope.today = moment();
+    .controller('AvailabilityCtrl', function($scope, $uibModal, $stateParams) {
+
+        $scope.today = moment($stateParams.date);
 
         var providers = [{
             id: 'a',
@@ -64,6 +64,7 @@ angular.module('threeWireDemo')
                 center: 'title',
                 right: 'today prev,next'
             },
+            defaultDate: $scope.today,
             height: 'auto',
             minTime: '08:00:00',
             maxTime: '18:00:00',

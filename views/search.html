@@ -133,6 +133,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row row-form">
                         <div class="col-xs-12">
                             <label class="mbn fw-bold">Time of Day</label>
@@ -160,6 +161,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row row-form">
+                        <div class="col-xs-3">
+                            <label class="mbn fw-bold">Date</label>
+                            <div class="input-group">
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="data.date"
+                                       is-open="datepicker.opened"
+                                       ng-click="openDatepicker()"
+                                       uib-datepicker-popup
+                                       close-text="Close"/>
+                                <span class="input-group-btn">
+                                    <button type="button"
+                                            class="btn btn-primary"
+                                            ng-click="openDatepicker()">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row row-form">
                         <div class="col-xs-12">
                             <label class="mbn fw-bold">Preferred provider</label>

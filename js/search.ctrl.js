@@ -5,6 +5,14 @@ angular.module('threeWireDemo')
 
         $scope.data = {}
 
+        $scope.datepicker = {
+            opened: false
+        };
+
+        $scope.openDatepicker = function() {
+            $scope.datepicker.opened = !$scope.datepicker.opened;
+        };
+
         $scope.providers = [
             'John Smith',
             'Jane Doe',
@@ -33,7 +41,8 @@ angular.module('threeWireDemo')
             $http.get('https://api.freebusy.io/beta/week/jcavanaugh@threewiresys.com?tz=America/New_York&date=2016-06-12')
                 .then(function(response) {
                     $state.go('app.availability', {
-                        data: $scope.data
+                        data: $scope.data,
+                        date: $scope.data.date
                     });
                 });
         };
